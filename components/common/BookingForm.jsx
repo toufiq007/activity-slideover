@@ -110,7 +110,7 @@ export default function BookDemoForm() {
           <Input
             type="text"
             placeholder="add players"
-            className="outline-0 border-0"
+            className="outline-none border-none focus-visible:ring-0 focus-visible:ring-offset-0"
           />
           <Button
             size="sm"
@@ -125,7 +125,7 @@ export default function BookDemoForm() {
           <Input
             type="text"
             placeholder="Recurrent Activity?"
-            className="outline-0 border-0"
+            className="outline-none border-none focus-visible:ring-0 focus-visible:ring-offset-0"
           />
           <Switch
             checked={recurrentActivity}
@@ -153,7 +153,11 @@ export default function BookDemoForm() {
 
         {/* Booking Check In */}
         <div className="flex items-center justify-between border-2 rounded-4xl px-2">
-          <Input type="text" placeholder="Booking Check In" />
+          <Input
+            type="text"
+            placeholder="Booking Check In"
+            className="outline-none border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+          />
           <Switch
             checked={bookingCheckIn}
             onCheckedChange={setBookingCheckIn}
