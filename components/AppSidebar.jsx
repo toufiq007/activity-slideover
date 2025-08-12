@@ -6,9 +6,9 @@ const AppSidebar = () => {
     <div className="w-48 bg-gray-200 flex flex-col">
       {/* Logo */}
       <div className="p-4">
-        <Button className="w-full bg-green-500 hover:bg-green-600 text-white font-medium">
-          Logo
-        </Button>
+        <p className="w-full text-xl p-2 rounded-2xl uppercase  font-bold">
+         slideOver
+        </p>
       </div>
 
       {/* Navigation */}

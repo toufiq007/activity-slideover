@@ -1,9 +1,7 @@
-import { Button } from "./ui/button";
 import BookDemoForm from "./BookingForm";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -15,21 +13,19 @@ const MainContent = () => {
       <div className="h-full bg-gray-50 rounded-lg border-gray-300">
         <div className="text-right">
           <Sheet>
-            <SheetTrigger>
-              <Button className="bg-green-600 hover:bg-green-700 text-white">
-                Create Activity
-              </Button>
+            <SheetTrigger className="bg-green-600 hover:bg-green-700 text-white p-2 px-4 rounded-xl">
+              Create Activity
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
                 <SheetTitle className="flex items-center gap-2">
-                  <p className="text-green-800 text-2xl">Book Court,</p>
+                  <p className="text-green-800 text-2xl uppercase">
+                    Slideover,
+                  </p>
                   <p className="text-green-700 text-sm">Wed Jul 30, 2025</p>
                 </SheetTitle>
               </SheetHeader>
-              <SheetDescription>
-                <BookDemoForm />
-              </SheetDescription>
+              <BookDemoForm />
             </SheetContent>
           </Sheet>
         </div>
