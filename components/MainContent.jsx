@@ -18,11 +18,14 @@ const MainContent = () => {
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle className="flex items-center gap-2">
-                  <p className="text-green-800 text-2xl uppercase">
-                    Slideover,
-                  </p>
-                  <p className="text-green-700 text-sm">Wed Jul 30, 2025</p>
+                <SheetTitle className="">
+                  <div className="flex items-center">
+                    <p className="text-green-800 text-2xl uppercase">
+                      Slideover,
+                    </p>
+                    <p className="text-green-700 text-sm">Wed Jul 30, 2025</p>
+                  </div>
+                  By limon
                 </SheetTitle>
               </SheetHeader>
               <BookDemoForm />
