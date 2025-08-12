@@ -24,7 +24,6 @@ The layout and styling are consistent across **small laptop**, **medium**, and *
 - [Next.js](https://nextjs.org/) – App Router
 - [Tailwind CSS](https://tailwindcss.com/) – Styling
 - [Shadcn/UI](https://ui.shadcn.com/) – UI components
-- [TypeScript](https://www.typescriptlang.org/) – Static typing
 
 ## 📂 Project Structure
 
