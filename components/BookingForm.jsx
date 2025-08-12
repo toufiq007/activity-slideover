@@ -15,6 +15,16 @@ import { Switch } from "@/components/ui/switch";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { X, Plus, Minus } from "lucide-react";
 
+import {
+  chooseActivityList,
+  createSelectList,
+  endTimeList,
+  multipleCourtList,
+  startTimeList,
+} from "@/lib/demoList";
+import CustomSelect from "./common/CustomSelect";
+import CustomSwitchInput from "./common/CustomSwitchInput";
+
 export default function BookDemoForm() {
   const [cancellationHours, setCancellationHours] = useState(24);
   const [recurrentActivity, setRecurrentActivity] = useState(false);
@@ -35,75 +45,19 @@ export default function BookDemoForm() {
     <Card className="w-full max-w-md mx-auto bg-white shadow-lg overflow-y-auto h-[650px]">
       <CardContent className="space-y-4">
         {/* Created By */}
-        <div className="space-y-2">
-          <Label
-            htmlFor="created-by"
-            className="text-sm font-medium text-gray-700"
-          >
-            Created By <span className="text-green-500">*</span>
-          </Label>
-          <Select>
-            <SelectTrigger className="w-full rounded-4xl">
-              <SelectValue placeholder="Ex: test@padelmates.se" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="test@padelmates.se">
-                test@padelmates.se
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        <CustomSelect label="Created By" selectItemsList={createSelectList} />
 
         {/* Start Time and End Time */}
-        <div className="flex justify-between">
-          <div className="space-y-2">
-            <Label className="text-sm font-medium text-gray-700">
-              Start Time <span className="text-red-500">*</span>
-            </Label>
-            <Select>
-              <SelectTrigger className="rounded-4xl">
-                <SelectValue placeholder="Select Start Time" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="09:00">09:00</SelectItem>
-                <SelectItem value="10:00">10:00</SelectItem>
-                <SelectItem value="11:00">11:00</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="space-y-2">
-            <Label className="text-sm font-medium text-gray-700">
-              End Time <span className="text-red-500">*</span>
-            </Label>
-            <Select>
-              <SelectTrigger className="rounded-4xl">
-                <SelectValue placeholder="Select End Time" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="10:00">10:00</SelectItem>
-                <SelectItem value="11:00">11:00</SelectItem>
-                <SelectItem value="12:00">12:00</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+        <div className="flex justify-between gap-2">
+          <CustomSelect label="Start Time" selectItemsList={startTimeList} />
+          <CustomSelect label="End Time" selectItemsList={endTimeList} />
         </div>
 
         {/* Choose Activity */}
-        <div className="space-y-2">
-          <Label className="text-sm font-medium text-gray-700">
-            Choose Activity <span className="text-red-500">*</span>
-          </Label>
-          <Select>
-            <SelectTrigger className="w-full rounded-4xl">
-              <SelectValue placeholder="Select Activity" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="padel">Padel</SelectItem>
-              <SelectItem value="tennis">Tennis</SelectItem>
-              <SelectItem value="squash">Squash</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        <CustomSelect
+          label="Choose Activity"
+          selectItemsList={chooseActivityList}
+        />
 
         {/* Add Players */}
         <div className="flex items-center justify-between border-2 rounded-4xl px-2">
@@ -121,49 +75,22 @@ export default function BookDemoForm() {
         </div>
 
         {/* Recurrent Activity */}
-        <div className="flex items-center justify-between border-2 rounded-4xl px-2">
-          <Input
-            type="text"
-            placeholder="Recurrent Activity?"
-            className="outline-none border-none focus-visible:ring-0 focus-visible:ring-offset-0"
-          />
-          <Switch
-            checked={recurrentActivity}
-            onCheckedChange={setRecurrentActivity}
-            className="bg-green-600"
-          />
-        </div>
+        <CustomSwitchInput
+          switchValue={recurrentActivity}
+          setSwitchValue={setRecurrentActivity}
+        />
 
         {/* Choose Multiple Courts */}
-        <div className="space-y-2">
-          <Label className="text-sm font-medium text-gray-700">
-            Choose Multiple Courts
-          </Label>
-          <Select>
-            <SelectTrigger className="w-full rounded-4xl">
-              <SelectValue placeholder="Select Courts" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="court1">Court 1</SelectItem>
-              <SelectItem value="court2">Court 2</SelectItem>
-              <SelectItem value="court3">Court 3</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        <CustomSelect
+          label="Select Multiple court"
+          selectItemsList={multipleCourtList}
+        />
 
         {/* Booking Check In */}
-        <div className="flex items-center justify-between border-2 rounded-4xl px-2">
-          <Input
-            type="text"
-            placeholder="Booking Check In"
-            className="outline-none border-none focus-visible:ring-0 focus-visible:ring-offset-0"
-          />
-          <Switch
-            checked={bookingCheckIn}
-            onCheckedChange={setBookingCheckIn}
-            className="bg-green-600"
-          />
-        </div>
+        <CustomSwitchInput
+          switchValue={bookingCheckIn}
+          setSwitchValue={setBookingCheckIn}
+        />
 
         {/* Cancellation Time and Door Code */}
         <div className="grid grid-cols-2 gap-2">

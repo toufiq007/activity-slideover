@@ -1,11 +1,11 @@
 import { Bell, ChevronDown, User } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "./ui/dropdown-menu";
 
 const Navbar = () => {
   return (
@@ -46,7 +46,6 @@ const Navbar = () => {
           </DropdownMenu>
 
           {/* Create Activity Button */}
-          
         </div>
       </div>
     </header>

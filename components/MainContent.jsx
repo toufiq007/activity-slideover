@@ -1,4 +1,5 @@
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
+import BookDemoForm from "./BookingForm";
 import {
   Sheet,
   SheetContent,
@@ -6,8 +7,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../ui/sheet";
-import BookDemoForm from "./BookingForm";
+} from "./ui/sheet";
 
 const MainContent = () => {
   return (
